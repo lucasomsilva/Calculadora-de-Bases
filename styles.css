@@ -1,0 +1,49 @@
+body {
+    background-color: bisque;
+    justify-content: center;
+}
+
+.title_header {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+    background-color: blueviolet;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 120px;
+}
+
+.bases {
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 15px;
+
+}
+
+.box_interna {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: solid black;
+    text-align: center;
+    background-color: burlywood;
+    border-radius: 25px;
+    height: 90%;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+.button {
+    background-color: black;
+    color: white;
+    height: 30px;
+    border-radius: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}

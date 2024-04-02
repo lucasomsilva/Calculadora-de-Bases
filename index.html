@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kauan & Lucas Machine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="title_header">Calculadora de bases:</h1>
+        <div class="links_header">
+            <a style="color: beige;" href="binario.html">Binário</a>
+            <a style="color: beige;" href="octal.html">Octal</a>
+            <a style="color: beige;" href="hexadecimal">Hexadecimal</a>
+            <a style="color: beige" href="index.html">Decimal</a>
+        </div>
+    </div>
+    <br><br>
+    <div class="box_contas">
+        <div class="box_interna">
+            <h2>Digite o valor em decimal:</h2>
+            <input style="border-radius: 10px;" type="number" id="numero_digitado">
+            <br>
+            <div class="bases">
+                <h2>Conversão em:</h2>
+                <b>Octal</b>
+                <input onclick="aparecerOctal()" type="checkbox" id="demo1">
+                <div id="octal"></div>
+                <b>Hexadecimal</b>
+                <input onclick="aparecerHexa()" type="checkbox" id="demo2">
+                <div id="hexa"></div>
+                <b>Binário</b>
+                <input onclick="aparecerBinario()" type="checkbox" id="demo3">
+                <div id="binario"></div>
+            </div>
+            <br><br><br>
+            <button class="button" onclick="converterNumeros()">Converta</button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function converterNumeros() {
+        let numero = Number(numero_digitado.value);
+
+        let valorOctal = numero.toString(8);
+        let valorHexa = numero.toString(16);
+        let valorBinario = numero.toString(2);
+
+        document.getElementById("octal").innerHTML = `${valorOctal}`
+        document.getElementById("hexa").innerHTML = `${valorHexa}`
+        document.getElementById("binario").innerHTML = `${valorBinario}`
+    }
+
+    // Falta as validações!!!
+    function aparecerOctal() {
+        demo1.style.display = 'block'
+    }
+
+    function aparecerHexa() {
+        demo2.style.display = 'block'
+    }
+
+    function aparecerBinario() {
+        demo3.style.display = 'block'
+    }
+
+</script>
