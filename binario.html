@@ -21,8 +21,8 @@
     <br><br>
     <div class="box_contas">
         <div class="box_interna">
-            <h2>Digite o valor em decimal:</h2>
-            <input style="border-radius: 10px;" type="number" placeholder="Decimal..." id="numero_digitado">
+            <h2>Digite o valor em binário:</h2>
+            <input style="border-radius: 10px;" type="number" placeholder="Binário..." id="numero_digitado">
             <br>
             <div class="bases">
                 <h2>Conversão em:</h2>
@@ -32,9 +32,9 @@
                 <b>Hexadecimal</b>
                 <input onclick="aparecerHexa()" type="checkbox" id="demo2">
                 <div id="hexa"></div>
-                <b>Binário</b>
-                <input onclick="aparecerBinario()" type="checkbox" id="demo3">
-                <div id="binario"></div>
+                <b>Decimal</b>
+                <input onclick="aparecerDecimal()" type="checkbox" id="demo3">
+                <div id="decimal"></div>
             </div>
             <br><br><br>
             <button class="button" onclick="converterNumeros()">Converta</button>
@@ -51,13 +51,15 @@
     function converterNumeros() {
         let numero = Number(numero_digitado.value);
 
-        let valorOctal = numero.toString(8);
-        let valorHexa = numero.toString(16);
-        let valorBinario = numero.toString(2);
+        
+        let numeroDecimal = parseInt(numero, 2);
+        let valorOctal = numeroDecimal.toString(8);
+        let valorHexa = numeroDecimal.toString(16);
+        let valorDecimal = numeroDecimal.toString(10);
 
         document.getElementById("octal").innerHTML = `${valorOctal}`
         document.getElementById("hexa").innerHTML = `${valorHexa}`
-        document.getElementById("binario").innerHTML = `${valorBinario}`
+        document.getElementById("decimal").innerHTML = `${valorDecimal}`
     }
 
     // Falta as validações!!!
@@ -69,7 +71,7 @@
         demo2.style.display = 'block'
     }
 
-    function aparecerBinario() {
+    function aparecerDecimal() {
         demo3.style.display = 'block'
     }
 
