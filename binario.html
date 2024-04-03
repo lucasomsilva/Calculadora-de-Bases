@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -54,7 +54,7 @@
         
         let numeroDecimal = parseInt(numero, 2);
         let valorOctal = numeroDecimal.toString(8);
-        let valorHexa = numeroDecimal.toString(16);
+        let valorHexa = numeroDecimal.toString(16).toUpperCase();
         let valorDecimal = numeroDecimal.toString(10);
 
         document.getElementById("octal").innerHTML = `${valorOctal}`

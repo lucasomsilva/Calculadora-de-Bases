@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -53,15 +53,15 @@
 
 
         let valorBinario = numero.toString(2);
-        let valorHexa = numero.toString(16);
+        let valorHexa = numero.toString(16).toUpperCase();
         let valorDecimal = numero.toString(10);
 
-        if (numero != 8) {
+        if (numero.indexOf("8")) {
+            alert('A base octal não aceita nenhum número 8')
+        } else {
             document.getElementById("binario").innerHTML = `${valorBinario}`
-            document.getElementById("hexa").innerHTML = `${valorHexa}`
+            document.getElementById("octal").innerHTML = `${valorOCtal}`
             document.getElementById("decimal").innerHTML = `${valorDecimal}`
-        }else{
-            alert('A base octal não aceita 8')
         }
 
     }

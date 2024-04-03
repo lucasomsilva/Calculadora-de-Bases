@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -52,7 +52,7 @@
         let numero = Number(numero_digitado.value);
 
         let valorOctal = numero.toString(8);
-        let valorHexa = numero.toString(16);
+        let valorHexa = numero.toString(16).toUpperCase();
         let valorBinario = numero.toString(2);
 
         document.getElementById("octal").innerHTML = `${valorOctal}`
