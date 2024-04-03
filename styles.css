@@ -34,7 +34,7 @@ body {
     margin-left: 400px;
     margin-right: 400px;
     padding: 12px;
-    box-shadow: 0 10px 10px 0px;
+    box-shadow: 0 10px 10px 0px rgba(0,0,0,0.3);
 }
 
 .button {
