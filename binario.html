@@ -22,19 +22,26 @@
     <div class="box_contas">
         <div class="box_interna">
             <h2>Digite o valor em binário:</h2>
-            <input style="border-radius: 10px;" type="number" placeholder="Binário..." id="numero_digitado">
+            <input style="border-radius: 10px;" type="number" pattern="[01]" placeholder="Binário..."
+                id="numero_digitado">
             <br>
-            <div class="bases">
-                <h2>Conversão em:</h2>
-                <b>Octal</b>
-                <input onclick="aparecerOctal()" type="checkbox" id="demo1">
-                <div id="octal"></div>
-                <b>Hexadecimal</b>
-                <input onclick="aparecerHexa()" type="checkbox" id="demo2">
-                <div id="hexa"></div>
-                <b>Decimal</b>
-                <input onclick="aparecerDecimal()" type="checkbox" id="demo3">
-                <div id="decimal"></div>
+            <div>
+                <div class="bases">
+                    <h2>Conversão em:</h2>
+                    <div class="checkbox-group">
+                        <label for="demo1"><b>Hexadecimal</b></label>
+                        <input onclick="aparecerHexa()" type="checkbox" id="demo1">
+                        <div id="hexa"></div>
+                        
+                        <label for="demo2"><b>Octal</b></label>
+                        <input onclick="aparecerOctal()" type="checkbox" id="demo2">
+                        <div id="octal"></div>
+                        
+                        <label for="demo3"><b>Decimal</b></label>
+                        <input onclick="aparecerDecimal()" type="checkbox" id="demo3">
+                        <div id="decimal"></div>
+                    </div>
+                </div>
             </div>
             <br><br><br>
             <button class="button" onclick="converterNumeros()">Converta</button>
@@ -51,28 +58,38 @@
     function converterNumeros() {
         let numero = Number(numero_digitado.value);
 
-        
+        if (!demo1.checked && !demo2.checked && !demo3.checked) {
+            alert("Selecione pelo menos uma opção de conversão.");
+            return;}
+
         let numeroDecimal = parseInt(numero, 2);
         let valorOctal = numeroDecimal.toString(8);
         let valorHexa = numeroDecimal.toString(16).toUpperCase();
         let valorDecimal = numeroDecimal.toString(10);
 
-        document.getElementById("octal").innerHTML = `${valorOctal}`
-        document.getElementById("hexa").innerHTML = `${valorHexa}`
-        document.getElementById("decimal").innerHTML = `${valorDecimal}`
+        if (demo1.checked) {
+            document.getElementById("hexa").innerHTML = `${valorHexa}`;
+        }
+        if (demo2.checked) {
+            document.getElementById("octal").innerHTML = `${valorOctal}`;
+        }
+        if (demo3.checked) {
+            document.getElementById("decimal").innerHTML = `${valorDecimal}`;
+        }
     }
 
-    // Falta as validações!!!
-    function aparecerOctal() {
-        demo1.style.display = 'block'
-    }
-
+   
+    // Funções para controlar a exibição das checkboxes !!!!!!
     function aparecerHexa() {
-        demo2.style.display = 'block'
+        demo1.style.display = 'block';
+    }
+
+    function aparecerOctal() {
+        demo2.style.display = 'block';
     }
 
     function aparecerDecimal() {
-        demo3.style.display = 'block'
+        demo3.style.display = 'block';
     }
 
 </script>

@@ -24,17 +24,23 @@
             <h2>Digite o valor em octal:</h2>
             <input style="border-radius: 10px;" type="number" placeholder="Octal..." id="numero_digitado">
             <br>
-            <div class="bases">
-                <h2>Conversão em:</h2>
-                <b>Binário</b>
-                <input onclick="aparecerBinario()" type="checkbox" id="demo1">
-                <div id="binario"></div>
-                <b>Hexadecimal</b>
-                <input onclick="aparecerHexa()" type="checkbox" id="demo2">
-                <div id="hexa"></div>
-                <b>Decimal</b>
-                <input onclick="aparecerDecimal()" type="checkbox" id="demo3">
-                <div id="decimal"></div>
+            <div>
+                <div class="bases">
+                    <h2>Conversão em:</h2>
+                    <div class="checkbox-group">
+                        <label for="demo1"><b>Binário</b></label>
+                        <input onclick="aparecerBinario()" type="checkbox" id="demo1">
+                        <div id="binario"></div>
+
+                        <label for="demo2"><b>Hexadecimal</b></label>
+                        <input onclick="aparecerHexa()" type="checkbox" id="demo2">
+                        <div id="hexa"></div>
+
+                        <label for="demo3"><b>Decimal</b></label>
+                        <input onclick="aparecerDecimal()" type="checkbox" id="demo3">
+                        <div id="decimal"></div>
+                    </div>
+                </div>
             </div>
             <br><br><br>
             <button class="button" onclick="converterNumeros()">Converta</button>
@@ -51,32 +57,33 @@
     function converterNumeros() {
         let numero = Number(numero_digitado.value);
 
+        let numeroDecimal = parseInt(numero, 8);
 
-        let valorBinario = numero.toString(2);
         let valorHexa = numero.toString(16).toUpperCase();
         let valorDecimal = numero.toString(10);
+        let valorBinario = numeroDecimal.toString(2);
 
-        if (numero.indexOf("8")) {
-            alert('A base octal não aceita nenhum número 8')
-        } else {
-            document.getElementById("binario").innerHTML = `${valorBinario}`
-            document.getElementById("octal").innerHTML = `${valorOCtal}`
-            document.getElementById("decimal").innerHTML = `${valorDecimal}`
+        if (demo1.checked) {
+            document.getElementById("binario").innerHTML = `${valorBinario}`;
         }
-
+        if (demo2.checked) {
+            document.getElementById("hexa").innerHTML = `${valorHexa}`;
+        }
+        if (demo3.checked) {
+            document.getElementById("decimal").innerHTML = `${valorDecimal}`;
+        }
     }
 
-    // Falta as validações!!!
     function aparecerBinario() {
-        demo1.style.display = 'block'
+        demo1.style.display = 'block';
     }
 
     function aparecerHexa() {
-        demo2.style.display = 'block'
+        demo2.style.display = 'block';
     }
 
     function aparecerDecimal() {
-        demo3.style.display = 'block'
+        demo3.style.display = 'block';
     }
 
 </script>

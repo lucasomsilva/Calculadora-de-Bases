@@ -24,17 +24,23 @@
             <h2>Digite o valor em decimal:</h2>
             <input style="border-radius: 10px;" type="number" placeholder="Decimal..." id="numero_digitado">
             <br>
-            <div class="bases">
-                <h2>Conversão em:</h2>
-                <b>Octal</b>
-                <input onclick="aparecerOctal()" type="checkbox" id="demo1">
-                <div id="octal"></div>
-                <b>Hexadecimal</b>
-                <input onclick="aparecerHexa()" type="checkbox" id="demo2">
-                <div id="hexa"></div>
-                <b>Binário</b>
-                <input onclick="aparecerBinario()" type="checkbox" id="demo3">
-                <div id="binario"></div>
+            <div>
+                <div class="bases">
+                    <h2>Conversão em:</h2>
+                    <div class="checkbox-group">
+                        <label for="demo1"><b>Binário</b></label>
+                        <input onclick="aparecerBinario()" type="checkbox" id="demo1">
+                        <div id="binario"></div>
+                        
+                        <label for="demo2"><b>Octal</b></label>
+                        <input onclick="aparecerOctal()" type="checkbox" id="demo2">
+                        <div id="octal"></div>
+                        
+                        <label for="demo3"><b>Hexadecimal</b></label>
+                        <input onclick="aparecerHexa()" type="checkbox" id="demo3">
+                        <div id="hexa"></div>
+                    </div>
+                </div>
             </div>
             <br><br><br>
             <button class="button" onclick="converterNumeros()">Converta</button>
@@ -47,7 +53,6 @@
 </html>
 
 <script>
-
     function converterNumeros() {
         let numero = Number(numero_digitado.value);
 
@@ -55,22 +60,26 @@
         let valorHexa = numero.toString(16).toUpperCase();
         let valorBinario = numero.toString(2);
 
-        document.getElementById("octal").innerHTML = `${valorOctal}`
-        document.getElementById("hexa").innerHTML = `${valorHexa}`
-        document.getElementById("binario").innerHTML = `${valorBinario}`
-    }
-
-    // Falta as validações!!!
-    function aparecerOctal() {
-        demo1.style.display = 'block'
-    }
-
-    function aparecerHexa() {
-        demo2.style.display = 'block'
+        if (demo1.checked) {
+            document.getElementById("binario").innerHTML = `${valorBinario}`;
+        }
+        if (demo2.checked) {
+            document.getElementById("octal").innerHTML = `${valorOctal}`;
+        }
+        if (demo3.checked) {
+            document.getElementById("hexa").innerHTML = `${valorHexa}`;
+        }
     }
 
     function aparecerBinario() {
-        demo3.style.display = 'block'
+        demo1.style.display = 'block';
     }
 
+    function aparecerOctal() {
+        demo2.style.display = 'block';
+    }
+
+    function aparecerHexa() {
+        demo3.style.display = 'block';
+    }
 </script>
