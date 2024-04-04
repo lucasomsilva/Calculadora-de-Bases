@@ -31,19 +31,20 @@
                     <div class="checkbox-group">
                         <label for="demo1"><b>Hexadecimal</b></label>
                         <input onclick="aparecerHexa()" type="checkbox" id="demo1">
-                        <div id="hexa"></div>
-                        
+                        <div style="display: none;" id="hexa"></div>
+                        <br>
                         <label for="demo2"><b>Octal</b></label>
                         <input onclick="aparecerOctal()" type="checkbox" id="demo2">
-                        <div id="octal"></div>
-                        
+                        <div style="display: none;" id="octal"></div>
+                        <br>
                         <label for="demo3"><b>Decimal</b></label>
                         <input onclick="aparecerDecimal()" type="checkbox" id="demo3">
-                        <div id="decimal"></div>
+                        <div style="display: none;" id="decimal"></div>
+                        <br>
                     </div>
                 </div>
             </div>
-            <br><br><br>
+            <br><br>
             <button class="button" onclick="converterNumeros()">Converta</button>
         </div>
     </div>
@@ -58,7 +59,6 @@
     function converterNumeros() {
         let numero = Number(numero_digitado.value);
 
-        // Verifica se o número é válido (contém apenas 0s e 1s)
         if (!/^[01]+$/.test(numero_digitado.value)) {
             document.getElementById("hexa").innerHTML = "ERRO";
             document.getElementById("octal").innerHTML = "ERRO";
@@ -68,7 +68,8 @@
 
         if (!demo1.checked && !demo2.checked && !demo3.checked) {
             alert("Selecione pelo menos uma opção de conversão.");
-            return;}
+            return;
+        }
 
         let numeroDecimal = parseInt(numero, 2);
         let valorOctal = numeroDecimal.toString(8);
@@ -86,18 +87,37 @@
         }
     }
 
-   
-    // Funções para controlar a exibição das checkboxes !!!!!!
     function aparecerHexa() {
-        demo1.style.display = 'block';
+        let checkbox = document.getElementById("demo1");
+        let resultado = document.getElementById("hexa");
+
+        if (checkbox.checked == true) {
+            resultado.style.display = 'block';
+        } else {
+            resultado.style.display = "none";
+        }
     }
 
     function aparecerOctal() {
-        demo2.style.display = 'block';
+        let checkbox = document.getElementById("demo2");
+        let resultado = document.getElementById("octal");
+
+        if (checkbox.checked == true) {
+            resultado.style.display = 'block';
+        } else {
+            resultado.style.display = "none";
+        }
     }
 
     function aparecerDecimal() {
-        demo3.style.display = 'block';
+        let checkbox = document.getElementById("demo3");
+        let resultado = document.getElementById("decimal");
+
+        if (checkbox.checked == true) {
+            resultado.style.display = 'block';
+        } else {
+            resultado.style.display = "none";
+        }
     }
 
 </script>

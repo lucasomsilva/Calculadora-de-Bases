@@ -1,57 +1,92 @@
 body {
-    background-color: bisque;
-    justify-content: center;
-  }
-  .title_header {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  .header {
-    background-color: rgb(197, 124, 28);
-    border-radius: 25px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 120px;
-    padding: 3px;
-  }
-  .bases {
-    text-decoration: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-radius: 15px;
-    display: inline-block;
-    text-align: center;
-    margin: 0 auto;
-  }
-  .checkbox-group {
-    display: flex;
-    flex-direction: column; /* Adiciona coluna como eu disse*/
-    align-items: center; 
-  }
-  .box_interna {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border: solid black;
-    text-align: center;
-    background-color: burlywood;
-    border-radius: 25px;
-    height: 90%;
-    margin-left: 400px;
-    margin-right: 400px;
-    padding: 12px;
-    box-shadow: 0 10px 10px 0px rgba(0,0,0,0.3);
-  }
-  
-  .button {
-    background-color: black;
-    color: white;
-    height: 30px;
-    border-radius: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  
-  .button:hover {
-    cursor: pointer;
-    background-color: white;
-    color: black;
-    transform: scale(1.1);
-    transition: color 0.5s ease;
-  }
+  background-color: bisque;
+  justify-content: center;
+}
+
+.title_header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+  background-color: rgb(197, 124, 28);
+  border-radius: 25px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 120px;
+  padding: 3px;
+  border: solid black;
+}
+
+#octal {
+  background-color: grey;
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+}
+
+#hexa {
+  background-color: grey;
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+#binario {
+  background-color: grey;
+  height: 30px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+#decimal {
+  background-color: grey;
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.bases {
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 15px;
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  /* Adiciona coluna como eu disse*/
+  align-items: center;
+}
+
+.box_interna {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: solid black;
+  text-align: center;
+  background-color: burlywood;
+  border-radius: 25px;
+  height: 90%;
+  margin-left: 400px;
+  margin-right: 400px;
+  padding: 12px;
+  box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.button {
+  background-color: black;
+  color: white;
+  height: 30px;
+  border-radius: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  transform: scale(1.1);
+  transition: color 0.5s ease;
+}
