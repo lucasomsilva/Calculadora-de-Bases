@@ -63,6 +63,13 @@
             return;
         }
 
+        if (!/^[0-9A-F]+$/.test(numero)) {
+            document.getElementById("binario").innerHTML = "ERRO";
+            document.getElementById("octal").innerHTML = "ERRO";
+            document.getElementById("decimal").innerHTML = "ERRO";
+            return;
+        }
+
         let valorDecimal = parseInt(numero, 16);
 
         let valorBinario = valorDecimal.toString(2);

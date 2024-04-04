@@ -58,6 +58,14 @@
     function converterNumeros() {
         let numero = Number(numero_digitado.value);
 
+        // Verifica se o número é válido (contém apenas 0s e 1s)
+        if (!/^[01]+$/.test(numero_digitado.value)) {
+            document.getElementById("hexa").innerHTML = "ERRO";
+            document.getElementById("octal").innerHTML = "ERRO";
+            document.getElementById("decimal").innerHTML = "ERRO";
+            return;
+        }
+
         if (!demo1.checked && !demo2.checked && !demo3.checked) {
             alert("Selecione pelo menos uma opção de conversão.");
             return;}

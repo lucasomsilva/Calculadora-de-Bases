@@ -22,7 +22,7 @@
     <div class="box_contas">
         <div class="box_interna">
             <h2>Digite o valor em octal:</h2>
-            <input style="border-radius: 10px;" type="number" placeholder="Octal..." id="numero_digitado">
+            <input style="border-radius: 10px;" type="text" placeholder="Octal..." pattern="[0-7]+" id="numero_digitado">
             <br>
             <div>
                 <div class="bases">
@@ -46,21 +46,22 @@
             <button class="button" onclick="converterNumeros()">Converta</button>
         </div>
     </div>
-
-
 </body>
 
 </html>
 
 <script>
-
     function converterNumeros() {
-        let numero = Number(numero_digitado.value);
+        let numero = document.getElementById("numero_digitado").value;
+
+        if (!/^[0-7]+$/.test(numero)) {
+            aparecerErro();
+            return;
+        }
 
         let numeroDecimal = parseInt(numero, 8);
-
-        let valorHexa = numero.toString(16).toUpperCase();
-        let valorDecimal = numero.toString(10);
+        let valorHexa = numeroDecimal.toString(16).toUpperCase();
+        let valorDecimal = numeroDecimal.toString(10);
         let valorBinario = numeroDecimal.toString(2);
 
         if (demo1.checked) {
@@ -86,4 +87,9 @@
         demo3.style.display = 'block';
     }
 
+    function aparecerErro() {
+        document.getElementById("binario").innerHTML = "ERRO";
+        document.getElementById("hexa").innerHTML = "ERRO";
+        document.getElementById("decimal").innerHTML = "ERRO";
+    }
 </script>
